@@ -161,7 +161,41 @@ input {
   <p class="note">Virtual points only • Compete with your friends</p>
 
 </main>
+<script>
 
+const buttons = document.querySelectorAll("button");
+
+buttons[0].disabled = false;
+
+buttons[1].disabled = false;
+
+buttons[0].addEventListener("click", function() {
+
+  const code = Math.random().toString(36)
+
+    .substring(2, 8).toUpperCase();
+
+  const room = document.createElement("section");
+
+  room.className = "panel";
+
+  room.innerHTML = `
+
+    <h2>Auction Room Created!</h2>
+
+    <p>Your room code is:</p>
+
+    <h1>${code}</h1>
+
+    <p>Keep this code to identify your room.</p>
+
+  `;
+
+  document.querySelector("main").appendChild(room);
+
+});
+
+</script>
 </body>
 
 </html>
